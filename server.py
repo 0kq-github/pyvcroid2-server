@@ -49,7 +49,7 @@ def generate(
 @app.get("/speakers",)
 def speakers():
   with pyvcroid2.VcRoid2() as vc:
-    return vc.listVoices()
+    return {"speakers":vc.listVoices(),"modes":vc.listLanguages()}
 
 if __name__ == "__main__":
   uvicorn.run(app=app,host="0.0.0.0",port=int(sys.argv[1]))
