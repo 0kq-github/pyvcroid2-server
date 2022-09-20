@@ -1,9 +1,10 @@
 # pyvcroid2-server
 
-pyvcroid2 + FastAPIのVOICEROID2用APIサーバー  
+[pyvcroid2](https://github.com/Nkyoku/pyvcroid2) + FastAPIのVOICEROID2用APIサーバー  
+特に理由がなければvoiceroid_daemonを使った方がいいです(多分)  
 /generateにリクエストを飛ばすと音声をwave形式で返します  
 
-## Usage
+## クイックスタート
 VOICEROID2のbit数に合わせたpythonのインストール  
 ```pip install -r requirements.txt```  を実行して必要なパッケージをインストール  
 VOICEROID2がインストールされたマシンでserver.pyを起動  
@@ -12,6 +13,9 @@ VOICEROID2がインストールされたマシンでserver.pyを起動
 ## API エンドポイント
 
 ### `GET /generate`
+
+音声の生成
+
 |パラメーター|説明|型|
 |:-:|:-:|:-:|
 |text|読み上げ文字列|str|
@@ -26,7 +30,7 @@ VOICEROID2がインストールされたマシンでserver.pyを起動
 |pauseSentence|文末ポーズ時間|int|
 |masterVolume|マスター音量|float|
 
-#### Response
+### Response
 |code|content-type|
 |:-:|:-:|
 |200|audio/wav|
@@ -35,9 +39,16 @@ VOICEROID2がインストールされたマシンでserver.pyを起動
 
 ### `GET /speakers`
 
-#### Response
+話者とモードの一覧を表示
+
+### Response
 |code|content-type|
 |:-:|:-:|
 |200|application/json|
 |500|text/plain|
 
+## 既知の不具合
+音声生成中に生成リクエストが飛んでくると生成に失敗する
+
+## License
+MIT License
