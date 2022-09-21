@@ -1,7 +1,7 @@
 # pyvcroid2-server
 
 [pyvcroid2](https://github.com/Nkyoku/pyvcroid2) + FastAPIのVOICEROID2用APIサーバー  
-特に理由がなければvoiceroid_daemonを使った方がいいです(多分)  
+特に理由がなければ[voiceroid_daemon](https://github.com/Nkyoku/voiceroid_daemon)を使った方がいいです(多分)  
 /generateにリクエストを飛ばすと音声をwave形式で返します  
 
 ## クイックスタート
